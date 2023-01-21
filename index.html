@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Penguin Fashion House </title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a008b2dede.js" crossorigin="anonymous"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -23,14 +24,31 @@
     <header class="bg-amber-50">
       <!-- nav-bar -->
       <nav class="container mx-auto">
-        <div class="flex items-center justify-between px-8">
-            <h1 class="text-5xl font-semibold"><span class="text-lime-500">Penguin</span> Fashion</h1>
+        <div class="md:flex md:items-center md:justify-between px-8">
+           <div class="flex justify-between items-center">
+            <h1 class="text-5xl font-semibold cursor-pointer">
+                <img class="h-10 inline" src="./images/tailwind.png " alt=""><span class="text-lime-500">Penguin</span> Fashion</h1>
+                <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                    <i class="fa-solid fa-bars" name="menu" onclick="Menu(this)"></i>
+                </span>
+           </div>
             <div>
-                <ul class="flex gap-6 text-xl">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Product</a></li>
+                <ul class="md:flex md:items-center gap-6 text-xl z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top[-400px] transition-all ease-in duration-500">
+                    <li class="md:my-0">
+                        <a class="hover:text-lime-500 duration-500" href="#">Home</a>
+                    </li>
+                    <li class="md:my-0">
+                        <a class="hover:text-lime-500 duration-500 href="">Contact</a>
+                    </li>
+                    <li class="md:my-0">
+                        <a class="hover:text-lime-500 duration-500 href="">About</a>
+                    </li>
+                    <li class="md:my-0">
+                        <a class="hover:text-lime-500 duration-500 href="">Product</a>
+                    </li>
+                    <li class="md:my-0">
+                        <a class="hover:text-lime-500 duration-500 href="">Rocky</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -313,5 +331,11 @@
         </div>
       </section>
     </main>
+    <script>
+        function Menu(e){
+            let list = document.querySelector('ul');
+            e.name === 'menu' ? ( e.name = "close" ,list.classList.add('top-[88px]') ,list.classList.add('opacity-100')) :( e.name = "menu", list.classList.remove('top-[88px]') ,list.classList.add('opacity-100'))
+        }
+    </script>
   </body>
 </html>
